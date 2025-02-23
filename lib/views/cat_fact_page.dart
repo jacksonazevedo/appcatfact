@@ -16,7 +16,11 @@ class CatFactPage extends StatelessWidget {
               case LoadingStatus.loading:
                 return Center(child: CircularProgressIndicator());
               case LoadingStatus.error:
-                return Center(child: Text('Erro: ${viewModel.errorMessage}'));
+                return Center(
+                  child: Text(
+                    'Erro ao realizar requisição: ${viewModel.errorMessage}',
+                  ),
+                );
               case LoadingStatus.completed:
                 return Center(
                   child: Padding(
